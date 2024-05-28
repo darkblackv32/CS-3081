@@ -18,3 +18,8 @@ def test_cannot_call_non_existing_endpoints_of_the_API():
         assert False, "Expection not raised"
     except:
         pass
+
+def test_the_result_is_correct_for_simple_cases():
+    detected = example.get_coordinates("Lima, Peru")
+    expected = -12.04, -77.02
+    assert detected == expected, "The result is not correct"
