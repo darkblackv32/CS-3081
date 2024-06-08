@@ -4,12 +4,15 @@ import requests
 
 app = FastAPI()
 
+
 class QueryModel(BaseModel):
     query: str
+
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Coordinates API"}
+
 
 @app.post("/get-coordinates/")
 def get_coordinates(query: QueryModel):
